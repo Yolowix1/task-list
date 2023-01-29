@@ -11,6 +11,7 @@ namespace Tasks
 
         public void Add(long taskIdentifier, string taskDescription, bool taskDone)
         {
+            //je ne peux pas réduire à 1 seul point l'import de cette classe.
             dynamic d1 = new System.Dynamic.ExpandoObject();
             d1.description = taskDescription;
             d1.done = taskDone;
