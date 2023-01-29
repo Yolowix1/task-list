@@ -35,11 +35,10 @@ namespace Tasks
         public void SetDoneIfExists(string identifier, bool done, IConsole console)
         {
             long parseIdentifier = long.Parse(identifier);
-            var identifiedTask = _tasksArrays
-                .FirstOrDefault(task => task.Key == parseIdentifier);
-
-            var identifiedTaskValue = identifiedTask.Value;
-            identifiedTaskValue.done = done;
+            if (_tasksArrays.ContainsKey(parseIdentifier))
+            {
+                _tasksArrays[parseIdentifier].done = done;
+            }
         }
     }
 }
